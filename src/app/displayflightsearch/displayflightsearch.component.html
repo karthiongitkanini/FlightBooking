@@ -1,0 +1,119 @@
+ <!-- -----------NAVIGATION BAR STARTS------------ -->
+ <div id="navigation">
+    <nav class="navbar navbar-default navbar-fixed-top" id="nav">
+      <div class="container-fluid">
+        <div class="navbar-header">
+
+          <!-- -----SIDE NAV--------- -->
+          <div id="mySidenav" style="overflow:hidden;" class="sidenav">
+            <button
+              style="font-size:30px;cursor:pointer;color:blueviolet; border:2px solid blueviolet; background: transparent;"
+              (click)="closeNavbu()" class="closebtn">&times;</button>
+            <a routerLink="">Flight details</a>
+            <a routerLink="">User Details</a>
+            <a routerLink="">Ticket Details</a>
+            <a routerLink="">Log out</a>
+            <a routerLink="">Cancel Ticket</a>
+          </div>
+          <button 
+            style="font-size:40px;cursor:pointer; border:none; background: transparent;  position: absolute;left: 0px; top: 6px; margin-top:0px;margin-left:0px;"
+            (click)="openNavbu()"> 
+            <span>&#9776;</span></button>
+          <!-- -----SIDE NAV ends--------- -->
+
+          <a class="navbar-brand">
+            <img src="../assets/Images/favicon.png" alt="logo"
+              style="width:90px; height:90px; position: relative; top: -200%; left: 40%;">
+          </a>
+          <a class="navbar-brand" 
+            style="font-size:40px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position: absolute; color:black;display:inline-block;margin-left: -5%;  margin-top:0%; top:15%">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Breeze
+            Airways </a>
+        </div>
+         <ul class="nav navbar-nav navbar-right">
+           <li>
+            <a>
+              <button  (click)="goToLogin()" type="button" class="btn btn-info">
+                <span class="glyphicon glyphicon-log-out"></span>
+                &nbsp;&nbsp;LOGOUT
+              </button>
+             </a>
+           </li>
+          <li>
+            <div style="border-left: 1px solid blueviolet; height: 60px;"></div>
+          </li>
+          <li>
+            <a>
+              <button (click)="goToRegister()" type="button" class="btn btn-info">
+                <span class="glyphicon glyphicon-home"></span>
+                &nbsp;&nbsp;HOME
+              </button>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+<!-- -----------NAVIGATION BAR ENDS------------ -->
+<br><br><br><br>
+   <div>
+      <mat-horizontal-stepper linear #stepper>
+              <mat-step [stepControl]="firstFormGroup">
+               <form [formGroup]="firstFormGroup">
+                  <ng-template matStepLabel>Fill out your name</ng-template>
+                  <mat-checkbox formControlName="firstCtrl" required>Hello</mat-checkbox>
+                   <div>
+                      <app-add-passenger></app-add-passenger>
+                   </div>
+                  <div style="padding-top: 6%;">
+                      <button  style="font-size: 25px;padding: 1% 2%" class="btn btn-success"  mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+             </mat-step>  
+                   
+      
+          <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+              <ng-template matStepLabel>Payment</ng-template>
+              hello 2
+              <div>
+                <button mat-button matStepperPrevious style="font-size: 25px;padding: 1% 2%" class="btn btn-success" >Back</button>&nbsp;&nbsp;
+                <button mat-button matStepperNext style="font-size: 25px;padding: 1% 2%" class="btn btn-success" >Next</button>
+              </div>
+            </form>
+          </mat-step>
+   
+          
+          <mat-step>
+            <ng-template matStepLabel>Preview and confirmation</ng-template>
+            You are about to be done.
+            <div>
+                <button mat-button matStepperPrevious style="font-size: 25px;padding: 1% 2%" class="btn btn-success" >Back</button>&nbsp;&nbsp;
+              <button mat-button matStepperNext style="font-size: 25px;padding: 1% 2%" class="btn btn-success" >Next</button>
+             </div>
+          </mat-step>
+      
+      
+      
+          <mat-step>
+              <ng-template matStepLabel>success</ng-template>
+              You are now done.
+              <div>
+                <button mat-button matStepperPrevious style="font-size: 25px;padding: 1% 2%" class="btn btn-success" >Back</button>&nbsp;&nbsp;
+                <button mat-button (click)="stepper.reset()" style="font-size: 25px;padding: 1% 2%" class="btn btn-success" >Reset</button>
+              </div>
+            </mat-step>
+      
+      
+      
+        </mat-horizontal-stepper>
+ 
+  </div>
+  
+
+
+ 
+
+
+ 

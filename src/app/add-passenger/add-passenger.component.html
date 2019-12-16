@@ -1,0 +1,49 @@
+
+<div>
+        <form [formGroup]="PassengerDetailsForm" (submit)="SaveData()">
+             <br />
+             <table>
+                  <tr formArrayName="PassengerDetails"
+                       *ngFor="let cd of PassengerDetailsForm.controls.PassengerDetails.controls ;let i=index;">
+                       <td formGroupName={{i}}>
+                            <!-- <b>
+                                 Passenger {{cd.get('Passenger').value}}
+                            </b> -->
+                            <b>
+                                 Passenger {{i+1}}
+                                 </b>
+                            <div>
+                                 <label>Passenger Name:</label>
+                                 <input class="form-control" type="text" formControlName="Name" />
+                            </div>
+                            <div>
+                                 <label>Passenger age:</label>
+                                 <input class="form-control" type="number" formControlName="Age" />
+                            </div>
+                            <br/>
+   
+                            <div>
+                                 <label>Passenger Gender:</label>
+                                 <select formControlName="Gender">
+                                      <option value="">Choose Gender</option>
+                                      <option *ngFor="let gender of Gender" [ngValue]="gender">{{gender}}</option>
+                                    </select>
+                            </div>
+                         
+                       </td>
+                  </tr>
+                  <tr>
+                       <td>
+                            <input type="submit" value="Continue" />
+                       </td>
+                  </tr>
+             </table>
+        </form>
+   </div>
+   
+   
+   <div *ngIf="result" class="alert alert-info">
+        {{result}}
+   </div>
+   
+   

@@ -1,0 +1,14 @@
+.divForgetPassword{
+background-color: whitesmoke;
+box-shadow: 0.5px 0.5px 8px dimgray;
+width: 500px;
+padding: 2%;
+border-radius: 2%;
+position: absolute;
+top: 30%;
+left: 25%;
+
+}
+.divUsernamePassword{
+    width: 400px;
+}
